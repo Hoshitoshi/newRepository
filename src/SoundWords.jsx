@@ -6,7 +6,7 @@ export default function SoundWords(){
     const audioRef = useRef(null);
 
     const correctAnswer = "Cherry"; // 正解を設定
-    const options = ["Cherry", "Friends"];
+    const options = ["Cherry", "Banana"];
 
     // 音声を再生する関数
     const playAudio = () => {

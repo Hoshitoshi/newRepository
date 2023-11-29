@@ -1,0 +1,23 @@
+/* メーターバーのスタイル */
+.meter-container {
+  width: 100%;
+  background-color: #ddd;
+  border: 1px solid #ccc;
+  margin-top: 10px;
+}
+
+.meter-bar {
+  display: flex;
+  height: 20px;
+  overflow: hidden;
+}
+
+/* 各セグメントのスタイル */
+.meter-segment {
+  flex: 1;
+  border-right: 1px solid #eee; /* 1問ごとの区切りを示すボーダー */
+}
+
+.meter-segment:last-child {
+  border-right: none; /* 最後のセグメントのボーダーを削除 */
+}

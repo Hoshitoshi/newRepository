@@ -1,0 +1,68 @@
+.App {
+  font-family: 'Comic Sans MS', 'Arial', sans-serif;
+  text-align: center;
+  background-color: #ffffff;
+  padding: 20px;
+}
+
+.questionSection, .answer-section, .feedbackSection {
+  margin-bottom: 20px;
+}
+
+.questionSection p {
+  font-size: 20px;
+  color: #333;
+}
+
+.characterBubble {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.characterBubble img {
+  width: 100px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.speechBubble {
+  background-color: #fff;
+  border: 2px solid #333;
+  border-radius: 15px;
+  padding: 10px;
+  font-size: 18px;
+}
+
+.answerSection input {
+  border: 2px solid #333;
+  border-radius: 10px;
+  padding: 5px 10px;
+  font-size: 16px;
+}
+
+.answerSection button {
+  background-color: lightseagreen;
+  opacity: 1;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.answerSection button:hover {
+  background-color: lightseagreen;
+}
+
+.feedbackSection {
+  font-size: 18px;
+  color: #008000; /* 正解は緑色 */
+}
+
+.feedbackSection.incorrect {
+  color: #ff0000; /* 不正解は赤色 */
+}

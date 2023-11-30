@@ -5,7 +5,7 @@ export default function VisualPareQuiz() {
   const quizData = [
     { id: 1, image: '/image/apple.png', word: 'apple' },
     { id: 2, image: '/image/cherry.png', word: 'cherry' },
-    { id: 3, image: '/image/banana.png', word: 'banana' }
+    { id: 3, image: '/image/banana.png', word: 'banana' },
   ];
 
   const [selectedImage, setSelectedImage] = useState(null);
@@ -42,11 +42,12 @@ export default function VisualPareQuiz() {
       setSelectedWord(word);
       if (selectedImage && isCorrectPair(selectedImage, word)) {
         setCorrectPairs([...correctPairs, selectedImage.id]);
+        setSelectedWord(null);
       }
     }
   };
 
-  const getImageBackgroundColor = (imageId, word) => {
+  const getImageBackgroundColor = (imageId) => {
     if (correctPairs.includes(imageId)) {
       return 'lightblue';
     } else if (selectedImage && selectedImage.id === imageId && !selectedWord) {

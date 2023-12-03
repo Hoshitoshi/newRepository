@@ -6,9 +6,11 @@ export default function SoundWords(){
     const audioRef = useRef(null);
 
     const correctAnswer = "Cherry"; // 正解を設定
-    const options = ["Cherry", "Banana"];
+    const options = ["Cherry", "Berry","Friends"];
 
     // 音声を再生する関数
+    // <audio ref={audioRef} />で、audioRef.currentはそのDOM要素(=audio要素)を直接指し示す。
+    // .play()はHTMLMediaElementのメソッドで、音声や動画の再生を開始mする。このメソッドをaudioRef.currentに対して呼び出すことで、参照している<audio>要素の音声ファイルが再生される。
     const playAudio = () => {
         audioRef.current.play();
     };

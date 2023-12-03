@@ -15,7 +15,7 @@ export default function VisualPareQuiz() {
 
   const isCorrectPair = (image, word) => {
     return image && word && image.word === word;
-  };
+  };//ここで、imageはプロパティとして引数を受けているのに対し、wordはwordだけを引数と受けている、という違いがあることに注意。
 
   useEffect(() => {
     if (quizData.length === correctPairs.length) {
@@ -74,7 +74,7 @@ export default function VisualPareQuiz() {
             src={item.image}
             alt={item.word}
             onClick={() => handleImageClick(item)}
-            style={{ backgroundColor: getImageBackgroundColor(item.id, item.word) }}
+            style={{ backgroundColor: getImageBackgroundColor(item.id) }}
             className={styles.image}
             disabled={correctPairs.includes(item.id)}
           />
@@ -97,3 +97,11 @@ export default function VisualPareQuiz() {
     </div>
   );
 }
+
+
+// ①画像をクリックすると、lightgreenになる。
+// ②他の画像をクリックすると、その画像がlightgreenになり、それ以外の画像はwhiteに戻る。
+// →stateを管理し、クリックされたものを追いかけ、それだけをlightgreenにするロジック。
+// ③画像がlightgreenにselectされた状態で、単語をクリックし、その時に単語のidが画像と一致していたらlightblueにする。
+// →なおかつ、一致していなかったら両方ともpinkにして、不正解✖️、と表示する。
+// →１秒間「不正解✖️」と表示された後、その言葉が消えて、クリックされた単語と画像は解除されて両方ともwhiteになる。

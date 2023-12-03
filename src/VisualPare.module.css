@@ -29,10 +29,12 @@
 }
 
 .button {
-  background-color: #4caf50;
+  /* background-color: #4caf50; */
+  width: 150px;
+  height: 150px;
   color: gray;
   border: none;
-  border-radius: 5px;
+  border-radius: 15px;
   padding: 10px 20px;
   text-transform: uppercase;
   font-weight: bold;
@@ -49,6 +51,12 @@
   background-color: #ccc;
   color: #666;
   cursor: default;
+}
+
+.imageDisabled {
+  opacity: 1;
+  /* cursor: not-allowed; */
+  pointer-events: none;
 }
 
 .correctMessage {

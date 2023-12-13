@@ -3,6 +3,7 @@ import {
   DndContext,
   DragOverlay,
   closestCorners,
+  rectIntersection,
   KeyboardSensor,
   PointerSensor,
   useSensor,
@@ -157,10 +158,10 @@ const Contaienr = () => {
   };
 
   return (
-    <div className="flex flex-row mx-auto">
+    <div>
       <DndContext
         sensors={sensors}
-        collisionDetection={closestCorners}
+        collisionDetection={rectIntersection}
         onDragStart={handleDragStart}
         onDragOver={handleDragOver}
         onDragEnd={handleDragEnd}

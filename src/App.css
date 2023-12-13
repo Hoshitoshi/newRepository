@@ -1,9 +1,13 @@
 .App {
   text-align: center;
+  border-radius: 10px;
 }
 
 .m-3{
   text-align: center;
+  padding: 10px;
+  border-radius: 10px;
+  width: 100px;
 }
 
 .App-logo {

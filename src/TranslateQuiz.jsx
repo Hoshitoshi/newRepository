@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import styles from "./TranslateQuiz.module.css";
 
-function TranslateQuiz() {
+
+//日本語の文章を英語に翻訳する問題
+function TranslateQuiz({onAnswer}) {
   // 問題文と正解
   const question = "彼女はケーキを食べています。";
   const correctAnswer = "She is eating a cake.";
@@ -17,6 +19,7 @@ function TranslateQuiz() {
     } else {
       setFeedback(`不正解！ 正解：${correctAnswer}`);
     }
+    onAnswer(true)
   };
 
   return (

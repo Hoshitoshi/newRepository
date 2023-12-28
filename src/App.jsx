@@ -10,6 +10,7 @@ import VisualPareQuiz from "./VisualPareQuiz";
 import VisualSoundQuiz from "./VisualSoundQuiz";
 import VisualPareChallenge from "./VisualPareChallenge";
 import Container from "./Container";
+import QuizHandler from "./QuizHandler";
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/quiz" element={<Quiz />} />
+        <Route path="/quizHandler" element={<QuizHandler />} />
         {/* <Route path="/result" element={<div>クイズ終了！結果ページへのリンクや内容をここに追加。</div>} /> */}
         <Route path="/outcome" element={<Outcome />} />
         <Route path="/visualPare" element={<VisualPareQuiz />} />
@@ -34,7 +36,7 @@ function App() {
           path="/"
           element={
             <>
-              <Link to="/quiz">クイズを始める</Link>
+              <Link to="/quizHandler">クイズを始める</Link>
             </>
           }
         />

@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 
-export default function SoundWords(){
+//音声ボタンを押して、聞こえた音声と同じ単語のボタンを押す問題
+export default function SoundWords({onAnswer}){
     const [selectedOption, setSelectedOption] = useState(null);
     const [answerResult, setAnswerResult] = useState(""); // 回答の結果を保存する状態
     const audioRef = useRef(null);
@@ -29,6 +30,7 @@ export default function SoundWords(){
                 setAnswerResult("不正解");
             }
         }
+        onAnswer(true)
     };
 
     return (
@@ -48,8 +50,8 @@ export default function SoundWords(){
                 {options.map((option, index) => (
                     <button
                         key={index}
-                        style={{ backgroundColor: selectedOption === option ? 'lightgreen' : 'white' }}
                         onClick={() => handleOptionClick(option)}
+                        style={{ backgroundColor: selectedOption === option ? 'lightgreen' : 'white' }}
                     >
                         {option}
                     </button>

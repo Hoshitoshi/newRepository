@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import {
   DndContext,
   DragOverlay,
-  closestCorners,
   rectIntersection,
   KeyboardSensor,
   PointerSensor,
@@ -18,7 +17,7 @@ import SortableContainer from "./SortableContainer";
 import Item from "./Item";
 // import { rightRow } from "./SortableContainer.css";
 
-const Contaienr = () => {
+const Contaiener = () => {
   // ドラッグ&ドロップでソート可能なリスト
   const [items, setItems] = useState<{
     [key: string]: string[];
@@ -194,4 +193,4 @@ const Contaienr = () => {
   );
 };
 
-export default Contaienr;
+export default Contaiener;

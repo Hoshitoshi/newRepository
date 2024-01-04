@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import styles from './VisualPare.module.css'; // CSSモジュールのインポート
+// import styles from './VisualPare.module.css'; // CSSモジュールのインポート
 
 export default function VisualPareQuiz() {
   const quizData = [

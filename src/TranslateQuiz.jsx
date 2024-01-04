@@ -3,7 +3,7 @@ import styles from "./TranslateQuiz.module.css";
 
 
 //日本語の文章を英語に翻訳する問題
-function TranslateQuiz({onAnswer}) {
+function TranslateQuiz({onAnswer, onNext}) {
   // 問題文と正解
   const question = "彼女はケーキを食べています。";
   const correctAnswer = "She is eating a cake.";
@@ -11,15 +11,19 @@ function TranslateQuiz({onAnswer}) {
   // ステート
   const [userAnswer, setUserAnswer] = useState('');
   const [feedback, setFeedback] = useState('');
+  const [answered, setAnswered] = useState(false);
 
   // 解答の検証
   const checkAnswer = () => {
     if (userAnswer.toLowerCase() === correctAnswer.toLowerCase()) {
       setFeedback('正解！');
+      onAnswer(true)
+      setAnswered(true)
     } else {
       setFeedback(`不正解！ 正解：${correctAnswer}`);
+      onAnswer(false)
+      setAnswered(true)
     }
-    onAnswer(true)
   };
 
   return (
@@ -32,17 +36,25 @@ function TranslateQuiz({onAnswer}) {
           <div className={styles.speechBubble}>{question}</div>
         </div>
       </div>
+
       <div className={styles.answerSection}>
         <input 
           type="text" 
           value={userAnswer} 
           onChange={(e) => setUserAnswer(e.target.value)} 
         />
-        <button onClick={checkAnswer}>回答する</button>
       </div>
+
+        {!answered && 
+        <button onClick={checkAnswer}>回答する</button>
+        }
+        {answered &&<div>
       <div className={styles.feedbackSection}>
         {feedback}
       </div>
+        <button onClick={onNext}>次へ</button>
+        </div>
+         }
     </div>
   );
 }

@@ -16,7 +16,7 @@ import { arrayMove, sortableKeyboardCoordinates } from "@dnd-kit/sortable";
 import SortableContainer from "./SortableContainer";
 import Item from "./Item";
 
-const DragDropChallenge = ({ onAnswer }) => {
+const DragDropChallenge = ({ onAnswer, onNext }) => {
   // 複数の文章パターンを定義
   const sentencePatterns = [
     "The cat is on the cushion",
@@ -182,11 +182,26 @@ const DragDropChallenge = ({ onAnswer }) => {
     setActiveId(null);
   };
 
+  // const handleAnswer = () => {
+  //   const isCorrect = items.container1.join(' ') === currentSentence;
+  //   setAnswerResult(isCorrect ? "正解！" : "不正解！");
+  //   onAnswer(isCorrect)
+  // };
+
+  const [answered, setAnswered] = useState(false);
+
   const handleAnswer = () => {
     const isCorrect = items.container1.join(' ') === currentSentence;
     setAnswerResult(isCorrect ? "正解！" : "不正解！");
-    onAnswer(true)
+    onAnswer(isCorrect);
+    setAnswered(true); // 回答後の状態を更新
   };
+
+  // const handleNextQuestion = () => {
+  //   // ここで次のクイズに遷移する処理を実装
+  //   // 例: onNext() を呼び出す
+  //   onNext();
+  // };
 
 
   return (
@@ -219,8 +234,17 @@ const DragDropChallenge = ({ onAnswer }) => {
             items={items.container2} />
           <DragOverlay>{activeId ? <Item id={activeId} /> : null}</DragOverlay>
         </DndContext>
+
+        {!answered && (
         <button onClick={handleAnswer}>回答する</button>
-        {answerResult && <div>{answerResult}</div>}
+      )}
+      {answered && (
+        <button onClick={onNext}>次へ</button>
+      )}
+      {answerResult && <div>{answerResult}</div>}
+
+        {/* <button onClick={handleAnswer}>回答する</button>
+        {answerResult && <div>{answerResult}</div>} */}
       </div>
     </div>
   );

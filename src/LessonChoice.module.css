@@ -1,0 +1,101 @@
+.index {
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.index .frameWrapper {
+  background-color: black;
+  height: 1194px;
+  width: 834px;
+}
+
+.index .frame {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  height: 1194px;
+  justify-content: space-between;
+  padding: 0px 0px 15px;
+  position: relative;
+  width: 834px;
+}
+
+.index .textWrapper {
+  align-self: stretch;
+  color: #a34d4d;
+  font-family: "Arial Black-Regular", Helvetica;
+  font-size: 36px;
+  font-weight: 400;
+  height: 55px;
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1px;
+  position: relative;
+  text-align: center;
+}
+
+.index .div {
+  height: 1179px;
+  margin-top: -54px;
+  position: relative;
+  width: 834px;
+}
+
+.index .frame2 {
+  background-image: url(https://cdn.animaapp.com/projects/653a87b84e89f359aa42b546/releases/653f341107399945284519ac/img/fukidashi-1.png);
+  background-position: 50% 50%;
+  background-size: cover;
+  height: 234px;
+  left: 263px;
+  position: absolute;
+  top: 905px;
+  width: 509px;
+}
+
+.index .textWrapper2 {
+  color: #000000;
+  font-family: "Arial Black-Regular", Helvetica;
+  font-size: 24px;
+  font-weight: 400;
+  left: 82px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 63px;
+  width: 414px;
+}
+
+.index .characterCat {
+  height: 160px;
+  left: -192px;
+  object-fit: cover;
+  position: absolute;
+  top: 33px;
+  width: 157px;
+}
+
+.index .ellipseWrapper {
+  background-image: url(https://cdn.animaapp.com/projects/653a87b84e89f359aa42b546/releases/653f3c70889490b426ee1f37/img/stagechoice-1.png);
+  background-position: 50% 50%;
+  background-size: cover;
+  height: 616px;
+  left: 0;
+  position: absolute;
+  top: 206px;
+  width: 834px;
+}
+
+.index .ellipse {
+  background-color: #ffffff0a;
+  border: 3px solid;
+  border-color: #fff40063;
+  border-radius: 22px/13px;
+  height: 26px;
+  left: 45px;
+  position: relative;
+  top: 262px;
+  width: 44px;
+}

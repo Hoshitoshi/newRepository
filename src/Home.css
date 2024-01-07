@@ -1,0 +1,16 @@
+.homeContainer{
+  display: flex;
+  width: 50%;
+  background-color: #f8fcff;
+}
+
+
+.splineRoom{
+  width: 100%;
+}
+
+.sidebar{
+  position: fixed;
+  left: 0;
+  top: 0;
+}

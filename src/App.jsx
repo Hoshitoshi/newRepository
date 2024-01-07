@@ -11,6 +11,13 @@ import VisualSoundQuiz from "./VisualSoundQuiz";
 import VisualPareChallenge from "./VisualPareChallenge";
 import Container from "./Container";
 import QuizHandler from "./QuizHandler";
+import { Initial } from "./Initial";
+import Home from "./Home";
+import Register from "./Register"
+import Login from "./Login"
+import StageChoice from "./StageChoice"
+import LessonChoice from "./LessonChoice"
+
 
 
 function App() {
@@ -31,13 +38,21 @@ function App() {
         <Route path="/dragDropChallenge" element={<DragDropChallenge />} />
         <Route path="/translateQuiz" element={<TranslateQuiz />} />
         <Route path="/container" element={<Container />} />
+        <Route path="/initial" element={<Initial />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/stageChoice" element={<StageChoice />} />
+        <Route path="/lessonChoice" element={<LessonChoice />} />
+        <Route path="/quizHandler" element={<QuizHandler />} />
         {/* <Route path="/dragDrop" element={<DragDropQuiz/>} /> */}
         <Route
           path="/"
           element={
-            <>
-              <Link to="/quizHandler">クイズを始める</Link>
-            </>
+            // <>
+            //   <Link to="/initial">クイズを始める</Link>
+            // </>
+            <Initial />
           }
         />
       </Routes>
